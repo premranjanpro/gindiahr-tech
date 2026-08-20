@@ -532,6 +532,41 @@
         }
 
         @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ===== AI PRODUCTS ===== */
+        .ai-section { padding: 90px 24px; background: var(--surface-2); }
+        .ai-section .section-label { color: #00E5FF; }
+        .ai-product { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 44px; margin-bottom: 36px; transition: all 0.3s; }
+        .ai-product:hover { border-color: rgba(0,229,255,0.3); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+        .ai-product-header { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 32px; flex-wrap: wrap; }
+        .ai-num { width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, #00E5FF22, #00E5FF11); border: 2px solid #00E5FF44; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+        .ai-product-header h3 { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; margin-bottom: 6px; color: #fff; }
+        .ai-product-header p { font-size: 15px; color: var(--gray-400); line-height: 1.65; max-width: 700px; }
+        .ai-market-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,200,83,0.12); border: 1px solid rgba(0,200,83,0.25); color: #00C853; font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 20px; margin-top: 10px; }
+
+        .ai-body { display: grid; grid-template-columns: 1fr 1.3fr; gap: 32px; align-items: start; }
+        .ai-diagram { background: #0A0A14; border: 1px solid #1a1a2e; border-radius: 18px; padding: 28px; font-family: 'Courier New', monospace; overflow: auto; }
+        .ai-diagram pre { color: #00E5FF; font-size: 12px; line-height: 1.7; white-space: pre; margin: 0; }
+        .ai-diagram .d-title { color: var(--orange); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; }
+
+        .ai-stack { }
+        .ai-stack-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--orange); margin-bottom: 16px; }
+        .stack-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; padding: 12px 16px; background: rgba(255,255,255,0.03); border-radius: 10px; border-left: 3px solid #00E5FF33; }
+        .stack-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #00E5FF; min-width: 90px; flex-shrink: 0; padding-top: 2px; }
+        .stack-val { font-size: 13px; color: var(--gray-300); line-height: 1.5; }
+        .ai-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
+        .ai-tag { background: rgba(255,153,0,0.10); border: 1px solid rgba(255,153,0,0.2); color: var(--orange); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
+
+        /* Architecture Block */
+        .arch-section { margin-top: 52px; background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 44px; }
+        .arch-section h3 { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 28px; color: #fff; text-align: center; }
+        .arch-diagram { background: #06060F; border: 1px solid #1a1a2e; border-radius: 16px; padding: 32px; font-family: 'Courier New', monospace; overflow-x: auto; }
+        .arch-diagram pre { color: #7dd3fc; font-size: 12px; line-height: 1.8; margin: 0; white-space: pre; }
+
+        @media (max-width: 900px) {
+            .ai-body { grid-template-columns: 1fr; }
+            .ai-product { padding: 28px 20px; }
+        }
     </style>
 </head>
 <body>
@@ -544,6 +579,7 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
+                <li><a href="#ai-products">AI Products</a></li>
                 <li><a href="#stack">Tech Stack</a></li>
                 <li><a href="#estimator">Cost Estimator</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -779,7 +815,7 @@
                     </div>
                     <div class="contact-point">
                         <span class="contact-icon">✉️</span>
-                        <div><strong>Email</strong><a href="mailto:tech@gindiahr.com">tech@gindiahr.com</a></div>
+                        <div><strong>Email</strong><a href="mailto:contact@gindiahr.com">contact@gindiahr.com</a></div>
                     </div>
                     <div class="contact-point">
                         <span class="contact-icon">🌐</span>
@@ -825,6 +861,332 @@
                         </div>
                         <button type="submit" class="btn-form-submit" id="tech-submit">Send Requirement →</button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI PRODUCTS SECTION -->
+    <section class="ai-section" id="ai-products">
+        <div class="container">
+            <div class="section-label">Our AI Product Suite</div>
+            <h2 class="section-title">5 Market-Ready <span class="highlight">AI Products</span> We Build</h2>
+            <p class="section-sub">Real, deployable AI solutions built with the latest stack — each product solving a genuine Indian market problem.</p>
+
+            <!-- AI PRODUCT 1 -->
+            <div class="ai-product">
+                <div class="ai-product-header">
+                    <div class="ai-num">🧠</div>
+                    <div>
+                        <h3>01. AI-Powered HR Automation System</h3>
+                        <p>An intelligent ATS (Applicant Tracking System) that uses NLP to automatically screen thousands of resumes, score and rank candidates, schedule interviews, and eliminate bias — designed for Indian hiring workflows in Hindi & English.</p>
+                        <span class="ai-market-badge">✅ Market Demand: Very High — 5,000+ HR agencies in India</span>
+                    </div>
+                </div>
+                <div class="ai-body">
+                    <div class="ai-diagram">
+                        <div class="d-title">📐 System Architecture</div>
+                        <pre>Resume Upload (PDF/DOCX)
+        │
+        ▼
+ ┌─────────────┐
+ │  OCR + Text │  ◄── Apache Tika
+ │  Extraction │
+ └──────┬──────┘
+        │
+        ▼
+ ┌─────────────────┐
+ │  NLP Engine     │  ◄── spaCy + BERT
+ │  (Skill Extract)│
+ └──────┬──────────┘
+        │
+        ▼
+ ┌─────────────────┐
+ │  AI Scorer      │  ◄── GPT-4 + Rules
+ │  (JD Matching)  │
+ └──────┬──────────┘
+        │
+        ▼
+ ┌─────────────────┐
+ │  Dashboard +    │  ◄── React.js
+ │  Auto-Scheduler │
+ └─────────────────┘</pre>
+                    </div>
+                    <div class="ai-stack">
+                        <div class="ai-stack-title">🛠️ Technology Stack</div>
+                        <div class="stack-row"><span class="stack-label">Frontend</span><span class="stack-val">React.js / Next.js — Candidate dashboard, JD upload, ranked list view</span></div>
+                        <div class="stack-row"><span class="stack-label">Backend</span><span class="stack-val">Python FastAPI — REST APIs for resume parsing, scoring, scheduling</span></div>
+                        <div class="stack-row"><span class="stack-label">AI / NLP</span><span class="stack-val">OpenAI GPT-4 + LangChain + spaCy + Hugging Face Transformers</span></div>
+                        <div class="stack-row"><span class="stack-label">Vector DB</span><span class="stack-val">Pinecone — semantic similarity search on resume embeddings</span></div>
+                        <div class="stack-row"><span class="stack-label">Database</span><span class="stack-val">PostgreSQL (candidates) + Redis (session cache) + AWS S3 (files)</span></div>
+                        <div class="stack-row"><span class="stack-label">Infra</span><span class="stack-val">AWS EC2 / Lambda + Docker + GitHub Actions CI/CD</span></div>
+                        <div class="ai-tags"><span class="ai-tag">GPT-4</span><span class="ai-tag">LangChain</span><span class="ai-tag">FastAPI</span><span class="ai-tag">Pinecone</span><span class="ai-tag">React</span><span class="ai-tag">AWS</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI PRODUCT 2 -->
+            <div class="ai-product">
+                <div class="ai-product-header">
+                    <div class="ai-num">📱</div>
+                    <div>
+                        <h3>02. WhatsApp AI Business Chatbot (Hindi + English)</h3>
+                        <p>A production-grade conversational AI chatbot on WhatsApp Business API. Handles customer queries, lead capture, appointment booking, order status, and product catalogues — 24/7, in Hindi and English, without human agents.</p>
+                        <span class="ai-market-badge">✅ Market Demand: Extreme — 500M+ WhatsApp users in India</span>
+                    </div>
+                </div>
+                <div class="ai-body">
+                    <div class="ai-diagram">
+                        <div class="d-title">📐 Message Flow Architecture</div>
+                        <pre>User WhatsApp Message
+        │
+        ▼
+ ┌──────────────────┐
+ │  Meta Cloud API  │  ◄── Webhook
+ │  (WhatsApp Biz)  │
+ └───────┬──────────┘
+         │
+         ▼
+ ┌──────────────────┐
+ │  Intent Router   │  ◄── Dialogflow CX
+ │  (NLU Layer)     │
+ └───────┬──────────┘
+         │
+         ▼
+ ┌──────────────────┐
+ │  RAG Engine      │  ◄── LangChain +
+ │  (Knowledge Base)│       Vector Store
+ └───────┬──────────┘
+         │
+         ▼
+ ┌──────────────────┐
+ │  Response Gen    │  ◄── GPT-4o
+ │  + Personalizer  │
+ └───────┬──────────┘
+         │
+         ▼
+  WhatsApp Reply</pre>
+                    </div>
+                    <div class="ai-stack">
+                        <div class="ai-stack-title">🛠️ Technology Stack</div>
+                        <div class="stack-row"><span class="stack-label">Platform</span><span class="stack-val">Meta WhatsApp Business Cloud API (Official) + Webhook integration</span></div>
+                        <div class="stack-row"><span class="stack-label">Backend</span><span class="stack-val">Node.js / Python FastAPI — message handling, session management</span></div>
+                        <div class="stack-row"><span class="stack-label">AI Engine</span><span class="stack-val">OpenAI GPT-4o + RAG (Retrieval Augmented Generation) — contextual answers</span></div>
+                        <div class="stack-row"><span class="stack-label">NLU</span><span class="stack-val">Dialogflow CX — intent classification, entity extraction, flows</span></div>
+                        <div class="stack-row"><span class="stack-label">Database</span><span class="stack-val">MongoDB (conversations) + Redis (live sessions) + Weaviate (vector)</span></div>
+                        <div class="stack-row"><span class="stack-label">Hosting</span><span class="stack-val">AWS Lambda (serverless) — scales to millions of messages per day</span></div>
+                        <div class="ai-tags"><span class="ai-tag">GPT-4o</span><span class="ai-tag">WhatsApp API</span><span class="ai-tag">Dialogflow</span><span class="ai-tag">RAG</span><span class="ai-tag">MongoDB</span><span class="ai-tag">Serverless</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI PRODUCT 3 -->
+            <div class="ai-product">
+                <div class="ai-product-header">
+                    <div class="ai-num">📄</div>
+                    <div>
+                        <h3>03. AI Document Intelligence Platform</h3>
+                        <p>Instantly extracts, classifies and validates data from invoices, Aadhaar, PAN cards, marksheets, contracts, and government forms using OCR + NLP — with 98%+ accuracy, reducing manual data entry by 90%.</p>
+                        <span class="ai-market-badge">✅ Market Demand: Very High — Banks, NBFCs, Insurance, EdTech, Govt.</span>
+                    </div>
+                </div>
+                <div class="ai-body">
+                    <div class="ai-diagram">
+                        <div class="d-title">📐 Document Processing Pipeline</div>
+                        <pre>Document Input
+ (PDF/IMG/DOCX)
+        │
+        ▼
+ ┌──────────────┐
+ │  Pre-Process │  ◄── OpenCV (deskew,
+ │  + Enhance   │       denoise, crop)
+ └──────┬───────┘
+        │
+        ▼
+ ┌──────────────┐
+ │  OCR Engine  │  ◄── Google Doc AI
+ │              │       + Tesseract
+ └──────┬───────┘
+        │
+        ▼
+ ┌──────────────────┐
+ │  Layout LM Model │  ◄── Microsoft
+ │  (Doc Structure) │       LayoutLMv3
+ └──────┬───────────┘
+        │
+        ▼
+ ┌──────────────┐
+ │  Field       │  ◄── Named Entity
+ │  Extraction  │       Recognition
+ └──────┬───────┘
+        │
+        ▼
+  Validated JSON
+  → API / Database</pre>
+                    </div>
+                    <div class="ai-stack">
+                        <div class="ai-stack-title">🛠️ Technology Stack</div>
+                        <div class="stack-row"><span class="stack-label">OCR</span><span class="stack-val">Google Document AI + Tesseract 5.0 + OpenCV preprocessing</span></div>
+                        <div class="stack-row"><span class="stack-label">AI Model</span><span class="stack-val">Microsoft LayoutLMv3 (fine-tuned) + BERT NER — document understanding</span></div>
+                        <div class="stack-row"><span class="stack-label">Backend</span><span class="stack-val">Python FastAPI + Celery (async task queue) — handles bulk processing</span></div>
+                        <div class="stack-row"><span class="stack-label">Storage</span><span class="stack-val">AWS S3 (documents) + MongoDB (extracted data) + PostgreSQL (audit logs)</span></div>
+                        <div class="stack-row"><span class="stack-label">Frontend</span><span class="stack-val">React.js — document upload, extraction review, correction interface</span></div>
+                        <div class="stack-row"><span class="stack-label">Security</span><span class="stack-val">AES-256 encryption + RBAC + audit trail (GDPR & RBI compliant)</span></div>
+                        <div class="ai-tags"><span class="ai-tag">LayoutLMv3</span><span class="ai-tag">Google Doc AI</span><span class="ai-tag">FastAPI</span><span class="ai-tag">Celery</span><span class="ai-tag">OpenCV</span><span class="ai-tag">AWS S3</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI PRODUCT 4 -->
+            <div class="ai-product">
+                <div class="ai-product-header">
+                    <div class="ai-num">📊</div>
+                    <div>
+                        <h3>04. AI Business Intelligence & Natural Language Analytics</h3>
+                        <p>A self-serve analytics platform where non-technical managers ask questions in plain English/Hindi — "Show top 5 cities by sales this month" — and get instant visual charts, predictions, and auto-insights powered by Text-to-SQL AI.</p>
+                        <span class="ai-market-badge">✅ Market Demand: High — Retail, Logistics, FMCG, Fintech, Hospital Chains</span>
+                    </div>
+                </div>
+                <div class="ai-body">
+                    <div class="ai-diagram">
+                        <div class="d-title">📐 NL Analytics Architecture</div>
+                        <pre>User NL Query (Hindi/English)
+  "Top 5 cities by revenue"
+          │
+          ▼
+ ┌────────────────────┐
+ │  Query Parser      │  ◄── GPT-4 (Text-to-SQL)
+ │  (LangChain Agent) │       + LangChain
+ └────────┬───────────┘
+          │ Generated SQL
+          ▼
+ ┌────────────────────┐
+ │  Data Warehouse    │  ◄── Snowflake /
+ │  (SQL Execution)   │       BigQuery
+ └────────┬───────────┘
+          │ Result DataFrame
+          ▼
+ ┌────────────────────┐
+ │  Chart Generator   │  ◄── D3.js / Recharts
+ │  + Insight Engine  │       + GPT-4 Narration
+ └────────┬───────────┘
+          │
+          ▼
+   Visual Dashboard
+   + AI Narrative</pre>
+                    </div>
+                    <div class="ai-stack">
+                        <div class="ai-stack-title">🛠️ Technology Stack</div>
+                        <div class="stack-row"><span class="stack-label">AI Layer</span><span class="stack-val">OpenAI GPT-4 (Text-to-SQL) + LangChain SQL Agent — NL to database query</span></div>
+                        <div class="stack-row"><span class="stack-label">Data Layer</span><span class="stack-val">Apache Spark + dbt (transformation) + Snowflake / BigQuery (warehouse)</span></div>
+                        <div class="stack-row"><span class="stack-label">BI Engine</span><span class="stack-val">Apache Superset (customized) — embedded dashboards with drill-down</span></div>
+                        <div class="stack-row"><span class="stack-label">Backend</span><span class="stack-val">Python FastAPI — query routing, caching, user auth, multi-tenant</span></div>
+                        <div class="stack-row"><span class="stack-label">Frontend</span><span class="stack-val">React.js + D3.js + Recharts — interactive, real-time charts</span></div>
+                        <div class="stack-row"><span class="stack-label">Forecast</span><span class="stack-val">Prophet / ARIMA (time-series) + scikit-learn — predictive analytics</span></div>
+                        <div class="ai-tags"><span class="ai-tag">GPT-4 SQL</span><span class="ai-tag">Snowflake</span><span class="ai-tag">Spark</span><span class="ai-tag">Superset</span><span class="ai-tag">D3.js</span><span class="ai-tag">Prophet</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI PRODUCT 5 -->
+            <div class="ai-product">
+                <div class="ai-product-header">
+                    <div class="ai-num">🎙️</div>
+                    <div>
+                        <h3>05. AI Voice Bot & Multilingual IVR System</h3>
+                        <p>A next-gen AI voice bot that replaces old DTMF IVR systems — understands spoken Hindi, English, and 8 regional Indian languages. Handles customer queries, KYC verification, appointment booking and complaint registration via phone call, 24×7.</p>
+                        <span class="ai-market-badge">✅ Market Demand: Extreme — BFSI, Telecom, Healthcare, Govt. Helplines</span>
+                    </div>
+                </div>
+                <div class="ai-body">
+                    <div class="ai-diagram">
+                        <div class="d-title">📐 Voice Bot Call Flow</div>
+                        <pre>Incoming Phone Call
+        │
+        ▼
+ ┌──────────────────┐
+ │  Telephony Layer │  ◄── Exotel / Twilio
+ │  (SIP / PSTN)    │
+ └───────┬──────────┘
+         │ Audio Stream
+         ▼
+ ┌──────────────────┐
+ │  Speech-to-Text  │  ◄── Whisper (OpenAI)
+ │  (Hindi/English) │       + Google STT
+ └───────┬──────────┘
+         │ Transcribed Text
+         ▼
+ ┌──────────────────┐
+ │  NLU + Intent    │  ◄── Rasa + Custom
+ │  Classification  │       Transformer
+ └───────┬──────────┘
+         │
+         ▼
+ ┌──────────────────┐
+ │  Response Engine │  ◄── GPT-4 (context-
+ │  + Business Logic│       aware responses)
+ └───────┬──────────┘
+         │ Response Text
+         ▼
+ ┌──────────────────┐
+ │  Text-to-Speech  │  ◄── Amazon Polly
+ │  (Natural Voice) │       + WaveNet TTS
+ └───────┬──────────┘
+         │ Audio
+         ▼
+   Caller hears
+   AI Response</pre>
+                    </div>
+                    <div class="ai-stack">
+                        <div class="ai-stack-title">🛠️ Technology Stack</div>
+                        <div class="stack-row"><span class="stack-label">Telephony</span><span class="stack-val">Exotel / Twilio / Knowlarity — Indian PSTN, toll-free, SIP trunking</span></div>
+                        <div class="stack-row"><span class="stack-label">STT</span><span class="stack-val">OpenAI Whisper (fine-tuned for Indian accents) + Google Cloud STT</span></div>
+                        <div class="stack-row"><span class="stack-label">NLU</span><span class="stack-val">Rasa Open Source + Custom Transformer — 10 Indian language support</span></div>
+                        <div class="stack-row"><span class="stack-label">AI Engine</span><span class="stack-val">GPT-4 + LangChain — dynamic, context-aware multilingual responses</span></div>
+                        <div class="stack-row"><span class="stack-label">TTS</span><span class="stack-val">Amazon Polly (Hindi/English) + Google WaveNet — natural human voice</span></div>
+                        <div class="stack-row"><span class="stack-label">Infra</span><span class="stack-val">Python FastAPI + WebSocket + Docker + Kubernetes (GCP) — real-time</span></div>
+                        <div class="ai-tags"><span class="ai-tag">Whisper</span><span class="ai-tag">Rasa</span><span class="ai-tag">GPT-4</span><span class="ai-tag">Amazon Polly</span><span class="ai-tag">Exotel</span><span class="ai-tag">Kubernetes</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Master Architecture -->
+            <div class="arch-section">
+                <h3>🏗️ GIndia Tech — Master AI Platform Architecture</h3>
+                <div class="arch-diagram">
+                    <pre>┌─────────────────────────────────────────────────────────────────────────────┐
+│                     CLIENT LAYER (End Users / Businesses)                    │
+│         Web Browser │ Mobile App │ WhatsApp │ Phone Call │ API Partner       │
+└──────────────────────────────────┬──────────────────────────────────────────┘
+                                   │  HTTPS / WSS / SIP
+┌──────────────────────────────────▼──────────────────────────────────────────┐
+│                    API GATEWAY + CDN + LOAD BALANCER                         │
+│                  AWS CloudFront │ Nginx │ AWS API Gateway                    │
+└──────────┬────────────────────────────────────────────┬───────────────────-─┘
+           │                                            │
+┌──────────▼──────────┐                     ┌──────────▼────────────────────┐
+│   AI / ML SERVICE   │                     │     CORE BUSINESS API          │
+│   (Python FastAPI)  │                     │   (Node.js / Django REST)      │
+│  ┌───────────────┐  │                     │  ┌───────────────────────────┐ │
+│  │  LLM Engine   │  │                     │  │   Business Logic Layer    │ │
+│  │  GPT-4o +     │  │                     │  │   Auth │ RBAC │ Billing   │ │
+│  │  LangChain    │  │                     │  └───────────────────────────┘ │
+│  └───────────────┘  │                     └──────────┬─────────────────────┘
+│  ┌───────────────┐  │                                │
+│  │ RAG Pipeline  │  │                     ┌──────────▼─────────────────────┐
+│  │ (Embeddings)  │  │                     │        DATABASE LAYER           │
+│  └───────────────┘  │                     │  PostgreSQL │ MongoDB │ Redis   │
+└──────────┬──────────┘                     │  Pinecone (Vector) │ AWS S3    │
+           │                                └────────────────────────────────┘
+┌──────────▼──────────┐
+│   ML MODEL STORE    │
+│  HuggingFace Hub    │
+│  Custom Fine-tuned  │
+│  TensorFlow Models  │
+└─────────────────────┘
+
+     MONITORING: Prometheus + Grafana │ Sentry │ AWS CloudWatch
+     CI/CD:      GitHub Actions │ Docker │ Kubernetes │ Terraform</pre>
                 </div>
             </div>
         </div>
