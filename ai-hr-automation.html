@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI HR Automation System | Resume Screening ATS | GIndia Tech Patna</title>
+    <meta name="description" content="AI-powered HR Automation System & ATS built by GIndia Tech. Auto resume screening, candidate ranking, interview scheduling using GPT-4, LangChain, spaCy. Contact us in Patna." />
+    <meta name="keywords" content="AI HR automation system India, AI ATS resume screening, AI recruitment software India, GPT-4 HR tool, LangChain HR bot, Patna AI software development, GIndia Tech" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://tech.gindiahr.com/ai-hr-automation.html" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --orange:#F26522; --orange-dark:#D4521A; --blue:#1565C0; --text:#1A2030; --sub:#5A6475; --bg:#fff; --soft:#F7F9FC; --border:#E2E8F0; }
+        *{margin:0;padding:0;box-sizing:border-box;} html{scroll-behavior:smooth;}
+        body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+        a{text-decoration:none;}
+        nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+        .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:64px;display:flex;justify-content:space-between;align-items:center;}
+        .nav-logo{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:800;color:var(--text);}
+        .nav-logo span{color:var(--orange);}
+        .nav-links{display:flex;gap:4px;list-style:none;}
+        .nav-links a{color:var(--sub);font-size:14px;font-weight:500;padding:7px 12px;border-radius:7px;transition:all .2s;}
+        .nav-links a:hover{color:var(--text);background:var(--soft);}
+        .nav-back{color:var(--orange);font-size:14px;font-weight:600;}
+
+        /* HERO */
+        .hero{padding:60px 24px 52px;background:var(--soft);border-bottom:1px solid var(--border);}
+        .hero-inner{max-width:1100px;margin:0 auto;}
+        .breadcrumb{font-size:13px;color:var(--sub);margin-bottom:16px;}
+        .breadcrumb a{color:var(--orange);}
+        .hero-badge{display:inline-flex;align-items:center;gap:7px;background:#FFF3ED;color:var(--orange);font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;border:1px solid #FFD9C5;margin-bottom:18px;}
+        h1{font-family:'Space Grotesk',sans-serif;font-size:44px;font-weight:800;line-height:1.15;margin-bottom:16px;}
+        h1 em{font-style:normal;color:var(--orange);}
+        .hero-sub{font-size:17px;color:var(--sub);max-width:680px;line-height:1.75;margin-bottom:28px;}
+        .hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;}
+        .tag{background:#fff;border:1px solid var(--border);color:var(--sub);font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;}
+        .hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+        .btn-primary{background:var(--orange);color:#fff;padding:13px 26px;border-radius:9px;font-weight:700;font-size:15px;transition:all .2s;display:inline-flex;align-items:center;gap:6px;}
+        .btn-primary:hover{background:var(--orange-dark);transform:translateY(-2px);}
+        .btn-outline{background:#fff;color:var(--text);padding:13px 26px;border-radius:9px;font-weight:600;font-size:15px;border:1.5px solid var(--border);transition:all .2s;}
+        .btn-outline:hover{border-color:var(--orange);color:var(--orange);}
+
+        /* CONTENT */
+        .section{padding:64px 24px;}
+        .section-alt{background:var(--soft);}
+        .container{max-width:1100px;margin:0 auto;}
+        .sec-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--orange);margin-bottom:10px;}
+        h2{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:800;margin-bottom:14px;line-height:1.25;}
+        h2 em{font-style:normal;color:var(--orange);}
+
+        /* WHAT */
+        .what-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+        .what-text p{font-size:15px;color:var(--sub);line-height:1.8;margin-bottom:14px;}
+        .feature-list{list-style:none;margin-top:20px;}
+        .feature-list li{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:14px;color:var(--text);}
+        .f-check{width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0;margin-top:2px;}
+        .diagram-box{background:#F0F4FF;border:1px solid #C7D7FF;border-radius:16px;padding:28px;font-family:'Courier New',monospace;}
+        .diagram-box .d-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--blue);margin-bottom:16px;}
+        .diagram-box pre{font-size:12px;line-height:1.8;color:#1a2030;white-space:pre;}
+
+        /* STACK */
+        .stack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;}
+        .stack-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px 18px;}
+        .stack-card h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--orange);margin-bottom:10px;}
+        .stack-item{font-size:13px;color:var(--sub);padding:4px 0;border-bottom:1px solid var(--border);}
+        .stack-item:last-child{border-bottom:none;}
+        .stack-item strong{color:var(--text);}
+
+        /* USE CASES */
+        .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+        .case-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px 18px;transition:all .25s;}
+        .case-card:hover{border-color:var(--orange);transform:translateY(-3px);}
+        .case-icon{font-size:28px;margin-bottom:12px;}
+        .case-card h4{font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
+        .case-card p{font-size:13px;color:var(--sub);line-height:1.6;}
+
+        /* PRICING */
+        .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+        .price-card{background:#fff;border:2px solid var(--border);border-radius:16px;padding:28px 22px;text-align:center;transition:all .25s;}
+        .price-card.featured{border-color:var(--orange);}
+        .price-card h4{font-size:15px;font-weight:700;color:var(--sub);margin-bottom:8px;}
+        .price-amount{font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:800;color:var(--text);margin-bottom:4px;}
+        .price-period{font-size:12px;color:var(--sub);margin-bottom:16px;}
+        .price-features{list-style:none;text-align:left;margin-bottom:20px;}
+        .price-features li{font-size:13px;color:var(--sub);padding:6px 0;border-bottom:1px solid var(--border);display:flex;gap:8px;}
+        .price-features li::before{content:'✓';color:var(--orange);font-weight:800;flex-shrink:0;}
+
+        /* CONTACT FORM */
+        .contact-section{background:var(--soft);border-top:1px solid var(--border);}
+        .contact-inner{max-width:700px;margin:0 auto;text-align:center;}
+        .contact-inner p{font-size:16px;color:var(--sub);margin-bottom:32px;line-height:1.7;}
+        .cform{background:#fff;border:1px solid var(--border);border-radius:20px;padding:36px;text-align:left;}
+        .fg{margin-bottom:16px;}
+        .fg label{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--sub);margin-bottom:6px;}
+        .fg input,.fg textarea,.fg select{width:100%;border:1.5px solid var(--border);border-radius:9px;padding:10px 14px;font-family:'Inter',sans-serif;font-size:14px;color:var(--text);outline:none;background:#fff;transition:border-color .2s;}
+        .fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--orange);}
+        .fg textarea{resize:vertical;min-height:90px;}
+        .frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+        .btn-send{width:100%;background:var(--orange);color:#fff;border:none;padding:13px;border-radius:9px;font-family:'Inter',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;}
+        .btn-send:hover{background:var(--orange-dark);}
+
+        /* OTHER PRODUCTS */
+        .other-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+        .other-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px 16px;transition:all .2s;}
+        .other-card:hover{border-color:var(--orange);transform:translateY(-3px);}
+        .other-card h4{font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;}
+        .other-card p{font-size:12px;color:var(--sub);margin-bottom:10px;}
+        .other-card a{font-size:13px;font-weight:600;color:var(--orange);}
+
+        footer{background:var(--text);color:rgba(255,255,255,.6);padding:28px 24px;text-align:center;font-size:13px;}
+        footer a{color:var(--orange);}
+
+        @media(max-width:900px){.what-grid{grid-template-columns:1fr;}.stack-grid{grid-template-columns:1fr 1fr;}.cases-grid{grid-template-columns:1fr 1fr;}.pricing-grid{grid-template-columns:1fr;}.other-grid{grid-template-columns:1fr 1fr;}}
+        @media(max-width:600px){h1{font-size:30px;}.frow{grid-template-columns:1fr;}.cases-grid{grid-template-columns:1fr;}.stack-grid{grid-template-columns:1fr;}.other-grid{grid-template-columns:1fr 1fr;}}
+    </style>
+</head>
+<body>
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">GIndia<span>Tech</span></a>
+        <ul class="nav-links">
+            <li><a href="/" class="nav-back">← All AI Products</a></li>
+            <li><a href="#stack">Tech Stack</a></li>
+            <li><a href="#contact">Get Quote</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-inner">
+        <div class="breadcrumb"><a href="/">GIndia Tech</a> → <a href="/#ai-products">AI Products</a> → AI HR Automation</div>
+        <div class="hero-badge">🧠 AI Product #01</div>
+        <h1>AI-Powered <em>HR Automation</em><br>& Resume Screening System</h1>
+        <p class="hero-sub">Automatically screen thousands of resumes, rank candidates by job-fit score, and schedule interviews — without any human effort. Built for Indian HR agencies, corporates and recruitment firms.</p>
+        <div class="hero-tags">
+            <span class="tag">GPT-4</span><span class="tag">LangChain</span><span class="tag">NLP</span><span class="tag">Python FastAPI</span><span class="tag">React.js</span><span class="tag">Pinecone</span><span class="tag">AWS</span>
+        </div>
+        <div class="hero-btns">
+            <a href="#contact" class="btn-primary">🚀 Get a Free Quote</a>
+            <a href="#stack" class="btn-outline">View Tech Stack</a>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="what">
+    <div class="container">
+        <div class="what-grid">
+            <div class="what-text">
+                <div class="sec-label">What It Does</div>
+                <h2>The <em>Smartest Way</em> to Hire at Scale</h2>
+                <p>Our AI HR Automation System eliminates the manual, time-consuming process of resume shortlisting. Upload hundreds of resumes — the AI reads, understands, and ranks candidates against your Job Description within seconds.</p>
+                <p>Built specifically for Indian hiring workflows — supports both Hindi and English resumes, handles diverse education formats (CBSE, ICSE, State Boards), and integrates with Indian job boards like Naukri, LinkedIn, Indeed.</p>
+                <ul class="feature-list">
+                    <li><div class="f-check">✓</div>Auto-parse resumes (PDF, DOCX, image scans)</li>
+                    <li><div class="f-check">✓</div>AI scores each candidate 0–100% against JD</li>
+                    <li><div class="f-check">✓</div>Ranks candidates — best fit at top</li>
+                    <li><div class="f-check">✓</div>Auto-sends interview invitations via email/WhatsApp</li>
+                    <li><div class="f-check">✓</div>Bias-free screening — purely skills & experience</li>
+                    <li><div class="f-check">✓</div>Dashboard with analytics — hire rate, drop-off, source</li>
+                    <li><div class="f-check">✓</div>API integration with Naukri, LinkedIn, Shine, Indeed</li>
+                    <li><div class="f-check">✓</div>Hindi + English bilingual resume support</li>
+                </ul>
+            </div>
+            <div class="diagram-box">
+                <div class="d-title">📐 System Flow Diagram</div>
+                <pre>
+ HR uploads JD + Resumes
+          │
+          ▼
+ ┌─────────────────┐
+ │   OCR Engine    │ ◄── Apache Tika
+ │  (PDF/IMG→Text) │     + Tesseract
+ └──────┬──────────┘
+        │
+        ▼
+ ┌─────────────────┐
+ │  NLP Parser     │ ◄── spaCy + BERT
+ │ (Skills, Exp,   │     HuggingFace
+ │  Education)     │
+ └──────┬──────────┘
+        │
+        ▼
+ ┌─────────────────┐
+ │  Vector Match   │ ◄── Pinecone DB
+ │  JD ↔ Resume   │     Embeddings
+ └──────┬──────────┘
+        │
+        ▼
+ ┌─────────────────┐
+ │  GPT-4 Ranker   │ ◄── LangChain
+ │  Score 0-100%   │     OpenAI API
+ └──────┬──────────┘
+        │
+        ▼
+ ┌─────────────────┐
+ │  Dashboard +    │ ◄── React.js
+ │  Auto-Scheduler │     Node.js
+ └─────────────────┘
+        │
+        ▼
+  Auto Interview Invite
+  (Email + WhatsApp)
+                </pre>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt" id="stack">
+    <div class="container">
+        <div class="sec-label">Technology Stack</div>
+        <h2>Built with <em>Enterprise-Grade</em> Technology</h2>
+        <div class="stack-grid">
+            <div class="stack-card">
+                <h4>🖥️ Frontend</h4>
+                <div class="stack-item"><strong>React.js</strong> — Admin dashboard, candidate list</div>
+                <div class="stack-item"><strong>Next.js</strong> — Server-side rendering, SEO</div>
+                <div class="stack-item"><strong>TypeScript</strong> — Type-safe code</div>
+                <div class="stack-item"><strong>Tailwind CSS</strong> — Responsive UI</div>
+            </div>
+            <div class="stack-card">
+                <h4>⚙️ Backend & AI</h4>
+                <div class="stack-item"><strong>Python FastAPI</strong> — REST APIs</div>
+                <div class="stack-item"><strong>OpenAI GPT-4</strong> — Candidate ranking</div>
+                <div class="stack-item"><strong>LangChain</strong> — AI orchestration</div>
+                <div class="stack-item"><strong>spaCy + BERT</strong> — NLP, entity extraction</div>
+            </div>
+            <div class="stack-card">
+                <h4>🗄️ Database & Storage</h4>
+                <div class="stack-item"><strong>PostgreSQL</strong> — Candidate & job data</div>
+                <div class="stack-item"><strong>Pinecone</strong> — Vector embeddings</div>
+                <div class="stack-item"><strong>Redis</strong> — Session cache</div>
+                <div class="stack-item"><strong>AWS S3</strong> — Resume file storage</div>
+            </div>
+            <div class="stack-card">
+                <h4>☁️ Infrastructure</h4>
+                <div class="stack-item"><strong>AWS EC2/Lambda</strong> — Hosting</div>
+                <div class="stack-item"><strong>Docker</strong> — Containerization</div>
+                <div class="stack-item"><strong>GitHub Actions</strong> — CI/CD pipeline</div>
+                <div class="stack-item"><strong>Nginx</strong> — Reverse proxy, load balancer</div>
+            </div>
+            <div class="stack-card">
+                <h4>📨 Integrations</h4>
+                <div class="stack-item"><strong>Naukri API</strong> — Job board sync</div>
+                <div class="stack-item"><strong>WhatsApp API</strong> — Interview invites</div>
+                <div class="stack-item"><strong>SMTP / SendGrid</strong> — Email automation</div>
+                <div class="stack-item"><strong>LinkedIn API</strong> — Candidate sourcing</div>
+            </div>
+            <div class="stack-card">
+                <h4>🔒 Security</h4>
+                <div class="stack-item"><strong>JWT Auth</strong> — Role-based access</div>
+                <div class="stack-item"><strong>AES-256</strong> — Data encryption</div>
+                <div class="stack-item"><strong>GDPR Compliant</strong> — Data privacy</div>
+                <div class="stack-item"><strong>Audit Logs</strong> — Full activity trail</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="usecases">
+    <div class="container">
+        <div class="sec-label">Who Uses This</div>
+        <h2>Perfect For <em>These Businesses</em></h2>
+        <div class="cases-grid" style="margin-top:32px;">
+            <div class="case-card"><div class="case-icon">🏢</div><h4>HR Consultancies</h4><p>Screen 1000+ resumes/day without manual effort. Handle multiple client mandates simultaneously with AI.</p></div>
+            <div class="case-card"><div class="case-icon">🏭</div><h4>Manufacturing Companies</h4><p>Bulk hiring for shop floor, engineers, quality teams. AI handles volume screening fast.</p></div>
+            <div class="case-card"><div class="case-icon">💻</div><h4>IT & Software Companies</h4><p>Technical skill matching — Java, Python, DevOps, Cloud. Filter only genuinely skilled candidates.</p></div>
+            <div class="case-card"><div class="case-icon">🏦</div><h4>Banks & NBFCs</h4><p>Screen for BFSI roles — Relationship Managers, Credit Analysts, Risk Officers across branches.</p></div>
+            <div class="case-card"><div class="case-icon">🏥</div><h4>Hospitals & Clinics</h4><p>Hire Doctors, Nurses, Paramedical staff — match qualification, registration, specialization.</p></div>
+            <div class="case-card"><div class="case-icon">🎓</div><h4>Educational Institutions</h4><p>Teacher hiring across subjects and grades — match qualification, experience and subject specialization.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-alt" id="contact">
+    <div class="container contact-section" style="background:transparent;border:none;">
+        <div class="contact-inner">
+            <div class="sec-label" style="text-align:center;">Get Started</div>
+            <h2 style="text-align:center;">Get a <em>Free Demo & Quote</em></h2>
+            <p>Tell us your hiring volume, team size and requirements. We'll build a custom demo for you within 48 hours.</p>
+            <div class="cform">
+                <form id="ai-hr-form">
+                    <div class="frow">
+                        <div class="fg"><label>Your Name *</label><input type="text" placeholder="Full Name" required></div>
+                        <div class="fg"><label>Company *</label><input type="text" placeholder="Company Name" required></div>
+                    </div>
+                    <div class="frow">
+                        <div class="fg"><label>Phone *</label><input type="tel" placeholder="+91 XXXXXXXXXX" required></div>
+                        <div class="fg"><label>Email</label><input type="email" placeholder="you@company.com"></div>
+                    </div>
+                    <div class="fg"><label>Monthly Hiring Volume</label>
+                        <select><option>Under 50 resumes/month</option><option>50–200 resumes/month</option><option>200–1000 resumes/month</option><option>1000+ resumes/month</option></select>
+                    </div>
+                    <div class="fg"><label>Requirement Details</label><textarea placeholder="Roles you hire for, industries, current pain points..."></textarea></div>
+                    <button type="submit" class="btn-send" id="ai-hr-submit">Request Free Demo →</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="other">
+    <div class="container">
+        <div class="sec-label">Other AI Products</div>
+        <h2>Explore Our <em>Full AI Suite</em></h2>
+        <div class="other-grid" style="margin-top:28px;">
+            <div class="other-card"><h4>📱 WhatsApp AI Chatbot</h4><p>24/7 customer support bot in Hindi + English</p><a href="whatsapp-ai-chatbot.html">Learn More →</a></div>
+            <div class="other-card"><h4>📄 Document Intelligence</h4><p>OCR + AI extraction from invoices, Aadhaar, PAN</p><a href="ai-document-intelligence.html">Learn More →</a></div>
+            <div class="other-card"><h4>📊 AI Analytics</h4><p>Ask questions in Hindi, get instant charts</p><a href="ai-business-analytics.html">Learn More →</a></div>
+            <div class="other-card"><h4>🎙️ Voice Bot & IVR</h4><p>AI voice bot in 10 Indian languages</p><a href="ai-voice-bot.html">Learn More →</a></div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 GIndia Tech — AI Software Development Company | Patna, India | <a href="mailto:contact@gindiahr.com">contact@gindiahr.com</a> | <a href="/">tech.gindiahr.com</a></p>
+</footer>
+
+<script>
+    document.getElementById('ai-hr-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('ai-hr-submit');
+        btn.textContent = '✅ Received! Demo will be scheduled within 48 hours.';
+        btn.style.background = '#2E7D32';
+        setTimeout(()=>{btn.textContent='Request Free Demo →';btn.style.background='';},6000);
+    });
+</script>
+</body>
+</html>
