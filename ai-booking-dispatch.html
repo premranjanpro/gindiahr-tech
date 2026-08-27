@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Booking Analytics & Revenue Optimization Engine | GIndia Tech</title>
+    <meta name="description" content="AI booking data intelligence, predictive dispatch allocation, dynamic surge pricing algorithms, and cancellation forecasting for cabs, hospitality and service businesses." />
+    <meta name="keywords" content="AI booking software India, dynamic pricing algorithm cab booking, automated dispatch engine Bihar, ride hailing AI Patna, booking data analytics" />
+    <link rel="canonical" href="https://tech.gindiahr.com/ai-booking-dispatch.html" />
+    <link rel="icon" type="image/png" href="favicon-76x76.png">
+    <link rel="apple-touch-icon" href="favicon-76x76.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0B0F19;
+            --surface: #111827;
+            --surface-2: #1F2937;
+            --border: #374151;
+            --purple: #8B5CF6;
+            --purple-glow: rgba(139,92,246,0.2);
+            --orange: #F26522;
+            --green: #10B981;
+            --text: #F9FAFB;
+            --sub: #9CA3AF;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+        a { text-decoration:none; color:inherit; }
+
+        header { background:rgba(11,15,25,0.9); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); padding:16px 24px; position:sticky; top:0; z-index:100; }
+        .h-inner { max-width:1150px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; }
+        .logo img { max-height:48px; width:auto; }
+        .h-nav { display:flex; gap:16px; align-items:center; }
+        .h-nav a { font-size:14px; font-weight:600; color:var(--sub); transition:color .2s; }
+        .h-nav a:hover { color:#FFF; }
+        .cta-btn { background:var(--purple); color:#FFF !important; font-weight:700; padding:8px 18px; border-radius:8px; }
+
+        .hero { padding:64px 20px 48px; text-align:center; max-width:900px; margin:0 auto; }
+        .badge { display:inline-flex; align-items:center; gap:8px; background:rgba(139,92,246,0.15); border:1px solid var(--purple); color:var(--purple); font-size:13px; font-weight:700; padding:6px 16px; border-radius:30px; margin-bottom:18px; }
+        h1 { font-family:'Space Grotesk',sans-serif; font-size:44px; font-weight:800; line-height:1.2; margin-bottom:16px; }
+        h1 span { color:var(--purple); }
+        .hero-sub { font-size:16px; color:var(--sub); max-width:700px; margin:0 auto 28px; }
+
+        .diagram-section { max-width:1100px; margin:0 auto 60px; padding:0 20px; }
+        .diag-box { background:var(--surface); border:1px solid var(--purple); border-radius:24px; padding:32px 24px; box-shadow:0 0 40px var(--purple-glow); position:relative; overflow:hidden; }
+        .diag-title { font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:700; margin-bottom:24px; text-align:center; color:var(--purple); }
+        
+        .pipeline-flow { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px; position:relative; z-index:2; }
+        .flow-node { background:var(--surface-2); border:1px solid var(--border); border-radius:16px; padding:20px 16px; text-align:center; transition:all .3s; }
+        .flow-node:hover { transform:translateY(-4px); border-color:var(--purple); box-shadow:0 8px 24px var(--purple-glow); }
+        .node-icon { font-size:32px; margin-bottom:10px; display:inline-block; }
+        .node-title { font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:700; margin-bottom:6px; color:#FFF; }
+        .node-desc { font-size:12px; color:var(--sub); line-height:1.5; }
+        .node-tag { display:inline-block; background:rgba(139,92,246,0.18); color:var(--purple); font-size:10px; font-weight:700; padding:2px 8px; border-radius:12px; margin-top:8px; }
+
+        .pulse-line { width:100%; height:4px; background:linear-gradient(90deg, transparent, var(--purple), transparent); margin:24px 0 16px; animation:flowPulse 2s linear infinite; }
+        @keyframes flowPulse { 0% { opacity:0.3; } 50% { opacity:1; } 100% { opacity:0.3; } }
+
+        .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:1100px; margin:0 auto 60px; padding:0 20px; }
+        .card { background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:28px; }
+        .card h3 { font-family:'Space Grotesk',sans-serif; font-size:20px; margin-bottom:12px; color:#FFF; display:flex; align-items:center; gap:10px; }
+        .card p { font-size:14px; color:var(--sub); line-height:1.7; margin-bottom:16px; }
+        .metric-list { list-style:none; }
+        .metric-item { display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:13.5px; }
+        .metric-item:last-child { border-bottom:none; }
+        .metric-lbl { color:var(--sub); }
+        .metric-val { color:var(--purple); font-weight:700; }
+
+        .cta-box { background:linear-gradient(135deg, rgba(139,92,246,0.2), rgba(242,101,34,0.15)); border:1px solid var(--purple); border-radius:24px; padding:44px 24px; text-align:center; max-width:900px; margin:0 auto 60px; }
+        .cta-box h2 { font-family:'Space Grotesk',sans-serif; font-size:32px; margin-bottom:12px; }
+        .cta-box p { font-size:15px; color:var(--sub); margin-bottom:24px; }
+        .btn-call { background:var(--purple); color:#FFF; font-weight:800; padding:14px 32px; border-radius:12px; font-size:16px; display:inline-flex; align-items:center; gap:8px; }
+
+        footer { text-align:center; padding:32px; border-top:1px solid var(--border); font-size:13px; color:var(--sub); }
+        footer a { color:var(--purple); }
+
+        @media (max-width:768px) {
+            h1 { font-size:30px; }
+            .grid-2 { grid-template-columns:1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="h-inner">
+        <a href="/" class="logo">
+            <img src="images/logo/logo.png" alt="GIndia Tech">
+        </a>
+        <nav class="h-nav">
+            <a href="index.html#ai-products">← All AI Solutions</a>
+            <a href="ai-tracking-telematics.html">Tracking AI</a>
+            <a href="whatsapp-ai-chatbot.html">WhatsApp AI</a>
+            <a href="tel:+916202254762" class="cta-btn">📞 +91 6202254762</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="badge">💎 Yield & Demand Optimization AI</div>
+        <h1>AI Booking Analytics & <span>Revenue Dispatch</span> Engine</h1>
+        <p class="hero-sub">Maximize utilization and GMV with predictive demand modeling, instant matching algorithms, dynamic surge pricing, and cancellation prevention for on-demand platforms.</p>
+    </section>
+
+    <!-- ARCHITECTURE FLOW DIAGRAM -->
+    <section class="diagram-section">
+        <div class="diag-box">
+            <div class="diag-title">🧠 Intelligent Booking & Dispatch Pipeline Architecture</div>
+            
+            <div class="pipeline-flow">
+                <!-- STEP 1 -->
+                <div class="flow-node">
+                    <span class="node-icon">📱</span>
+                    <div class="node-title">1. Search & Intent Stream</div>
+                    <div class="node-desc">Captures live pickup coordinates, destination searches, customer tier, and app search frequency.</div>
+                    <span class="node-tag">Real-Time Search Ingestion</span>
+                </div>
+
+                <!-- STEP 2 -->
+                <div class="flow-node">
+                    <span class="node-icon">🔥</span>
+                    <div class="node-title">2. Demand Heatmap AI</div>
+                    <div class="node-desc">Predicts high-density request zones 15-30 mins in advance using historical weather, events & calendar triggers.</div>
+                    <span class="node-tag">Spatio-Temporal LSTM</span>
+                </div>
+
+                <!-- STEP 3 -->
+                <div class="flow-node">
+                    <span class="node-icon">💲</span>
+                    <div class="node-title">3. Dynamic Pricing AI</div>
+                    <div class="node-desc">Calculates real-time price multiplier balancing driver acceptance probability and rider price sensitivity.</div>
+                    <span class="node-tag">Reinforcement Learning</span>
+                </div>
+
+                <!-- STEP 4 -->
+                <div class="flow-node">
+                    <span class="node-icon">⚡</span>
+                    <div class="node-title">4. Optimal Bipartite Match</div>
+                    <div class="node-desc">Global matching algorithm that assigns bookings to drivers to minimize deadhead miles and ETA.</div>
+                    <span class="node-tag">Hungarian / Munkres AI</span>
+                </div>
+
+                <!-- STEP 5 -->
+                <div class="flow-node">
+                    <span class="node-icon">🛡️</span>
+                    <div class="node-title">5. Cancellation Shield</div>
+                    <div class="node-desc">Predicts high-risk cancellations in real-time, triggering automated driver incentives and rider re-assurance.</div>
+                    <span class="node-tag">XGBoost Churn Classifier</span>
+                </div>
+            </div>
+
+            <div class="pulse-line"></div>
+            <div style="display:flex; justify-content:space-between; font-size:12px; color:var(--sub); padding:0 8px;">
+                <span>⚡ Sub-100ms Global Matching Engine</span>
+                <span>📈 +32% Fleet Capacity Utilization</span>
+                <span>🎯 -60% Driver Idle Time</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- DATA CAPABILITIES -->
+    <section class="grid-2">
+        <div class="card">
+            <h3>📊 What We Unlock From Booking Data</h3>
+            <p>Every booking, cancellation, and search query contains millions of revenue signals. GIndia Tech turns booking history into competitive advantage:</p>
+            <ul class="metric-list">
+                <li class="metric-item"><span class="metric-lbl">Driver Matching SLA</span><span class="metric-val">&lt; 3.2 Seconds</span></li>
+                <li class="metric-item"><span class="metric-lbl">Trip Cancellation Reduction</span><span class="metric-val">-38% Ride Drops</span></li>
+                <li class="metric-item"><span class="metric-lbl">Revenue Per Available Hour</span><span class="metric-val">+27% Driver Earnings</span></li>
+                <li class="metric-item"><span class="metric-lbl">Peak Hour Surge Realization</span><span class="metric-val">+22% Net GMV Lift</span></li>
+                <li class="metric-item"><span class="metric-lbl">Customer Lifetime Value (LTV)</span><span class="metric-val">+40% Retention</span></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>🛠️ Technology Implementation</h3>
+            <p>Robust microservices architecture built for scale, high concurrency, and zero downtime:</p>
+            <ul class="metric-list">
+                <li class="metric-item"><span class="metric-lbl">Core Dispatch Engine</span><span class="metric-val">Go / Rust + C++ Optimizer</span></li>
+                <li class="metric-item"><span class="metric-lbl">ML Inference Server</span><span class="metric-val">Triton / ONNX Runtime + FastAPI</span></li>
+                <li class="metric-item"><span class="metric-lbl">Feature Store & Cache</span><span class="metric-val">Feast + Redis Cluster</span></li>
+                <li class="metric-item"><span class="metric-lbl">Data Warehouse</span><span class="metric-val">ClickHouse + BigQuery</span></li>
+                <li class="metric-item"><span class="metric-lbl">Admin Dashboard</span><span class="metric-val">Next.js + Apache ECharts</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-box">
+        <h2>Power Your Booking Operations With AI Intelligence</h2>
+        <p>Talk directly with our AI engineering architects in Patna, Delhi, and Faridabad to integrate predictive dispatch and dynamic pricing into your application.</p>
+        <a href="tel:+916202254762" class="btn-call">📞 Speak to Our AI Dispatch Engineers</a>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 GIndia Tech Solutions | Patna (Kankarbagh) | New Delhi (Malviya Nagar) | Faridabad (Bhopani)<br>
+    Keywords: AI booking software, cab booking dispatch AI Patna, dynamic pricing engine Bihar, ride hailing AI India</p>
+</footer>
+
+</body>
+</html>
